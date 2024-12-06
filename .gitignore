@@ -1,0 +1,3 @@
+data_ingest/raw_data/
+data_cleaning/processed_data/
+.ipynb_checkpoints/
