@@ -46,7 +46,7 @@ def clinical_trials():
                     phases = 'Unknown'
                 # brief_summary = study['protocolSection']['descriptionModule'].get('briefSummary', 'Unknown')
                 # startDate = study['protocolSection']['statusModule'].get('startDateStruct', {}).get('date', 'Unknown Date')
-                # TODO: interventions.name; oversightModule.isFdaRegulatedDrug | isFdaRegulatedDevice | 
+                # TODO: protocolSection.interventions.name; oversightModule.isFdaRegulatedDrug | isFdaRegulatedDevice | 
                 
                 # Extract dates
                 primary_completion_date = study['protocolSection']['statusModule'].get('primaryCompletionDateStruct', {}).get('date', 'Unknown Date')
