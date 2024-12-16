@@ -1,7 +1,70 @@
+import os
+import json
 import requests
 import pandas as pd
+import requests_cache
 import yfinance as yf 
+from munch import Munch
+from dotenv import load_dotenv
 from yahoofinancials import YahooFinancials
+from ratelimit import limits, sleep_and_retry
+
+# Load environment variables from .env file
+load_dotenv()
+openFDA_api_key = os.getenv("OPENFDA_API_KEY")
+
+# cache API calls in a sqllite file to reduce the number of requests to openfda server
+requests_cache.install_cache('openfda_cache')
+
+OPENFDA_API = "https://api.fda.gov/drug/event.json"
+OPENFDA_METADATA_YAML = "https://open.fda.gov/fields/drugevent.yaml"
+
+@sleep_and_retry
+@limits(calls=40, period=60)
+
+def call_api(params):
+    """
+    OpenFDA API call. Respects rate limit. Overrides default data limit
+    Input: dictionary with API parameters {search: '...', count: '...'}
+    Output: nested dictionary representation of the JSON results section
+    
+    OpenFDA API rate limits:
+         With no API key: 40 requests per minute, per IP address. 1000 requests per day, per IP address.
+         With an API key: 240 requests per minute, per key. 120000 requests per day, per key.
+    """
+    if not params:
+        params = {}
+    params['limit'] = params.get('limit', 1000)
+
+    # Uncomment the next line to add API key from .env
+    # params['api_key'] = openFDA_api_key
+
+    response = requests.get(OPENFDA_API, params=params)
+    # print(response.url)
+
+    if response.status_code != 200:
+        raise Exception('API response: {}'.format(response.status_code))
+    return response.json()['results']
+
+def api_meta():
+    """
+    YAML file with field description and other metadata retrieved from the OpenFDA website
+    Parses YAML file and provides syntactic sugar for accessing nested dictionaries
+    Example: .patient.properties.patientagegroup.possible_values.value
+    Note: reserved words, such as count and items still have to be accessed via ['count'], ['items']
+    """
+
+    response = requests.get(OPENFDA_METADATA_YAML)
+    if response.status_code != 200:
+        raise Exception('Could not retrieve YAML file with drug event API fields')
+    
+    # munch is a yaml parser with javascript-style object access
+    y = Munch.fromYAML(response.text)
+    return y['properties']
+
+# Print api_meta in pretty JSON format
+print(json.dumps(api_meta(), indent=4))
+
 
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)

@@ -1,0 +1,355 @@
+company_ct,stock_ticker,stock_exchange
+Apple Inc.,AAPL,NASDAQ
+AbbVie,ABBV,NYSE
+"ARCA Biopharma, Inc.",ABIO,NASDAQ
+Abbott Medical Devices,ABT,NYSE
+Abbott,ABT,NYSE
+Arbutus Biopharma Corporation,ABUS,NASDAQ
+ACADIA Pharmaceuticals Inc.,ACAD,NASDAQ
+Acer Therapeutics Inc.,ACER,NASDAQ
+AC Immune SA,ACIU,NASDAQ
+"Aclaris Therapeutics, Inc.",ACRS,NASDAQ
+Acasti Pharma Inc.,ACST,NASDAQ
+"ADMA Biologics, Inc.",ADMA,NASDAQ
+Adamis Pharmaceuticals Corporation,ADMP,NASDAQ
+"Adamas Pharmaceuticals, Inc.",ADMS,NASDAQ
+"Aduro Biotech, Inc.",ADRO,NASDAQ
+"Adverum Biotechnologies, Inc.",ADVM,NASDAQ
+"Advaxis, Inc.",ADXS,NASDAQ
+Agenus Inc.,AGEN,NASDAQ
+"Agios Pharmaceuticals, Inc.",AGIO,NASDAQ
+Allergan,AGN,NYSE
+"Aimmune Therapeutics, Inc.",AIMT,NASDAQ
+"Achaogen, Inc.",AKAO,NASDAQ
+"Akorn, Inc.",AKRX,NASDAQ
+"Akouos, Inc.",AKUS,NASDAQ
+Alcon Research,ALC,NYSE
+"Alder Biopharmaceuticals, Inc.",ALDR,NASDAQ
+"Aldeyra Therapeutics, Inc.",ALDX,NASDAQ
+"Align Technology, Inc.",ALGN,NASDAQ
+Allakos Inc.,ALLK,NASDAQ
+"Alpine Immune Sciences, Inc.",ALPN,NASDAQ
+"Aileron Therapeutics, Inc.",ALRN,NASDAQ
+"Altimmune, Inc.",ALT,NASDAQ
+"Alexion Pharmaceuticals, Inc.",ALXN,NASDAQ
+"AMAG Pharmaceuticals, Inc.",AMAG,NASDAQ
+Amedica Corporation,AMDA,NASDAQ
+Amgen,AMGN,NASDAQ
+"Amphastar Pharmaceuticals, Inc.",AMPH,NASDAQ
+"AnaptysBio, Inc.",ANAB,NASDAQ
+"Angiodynamics, Inc.",ANGO,NASDAQ
+"Anika Therapeutics, Inc.",ANIK,NASDAQ
+"Apollo Endosurgery, Inc.",APEN,NASDAQ
+"Apellis Pharmaceuticals, Inc.",APLS,NASDAQ
+Aptose Biosciences Inc.,APTO,NASDAQ
+"Aravive, Inc.",ARAV,NASDAQ
+Accuray Incorporated,ARAY,NASDAQ
+"Aridis Pharmaceuticals, Inc.",ARDS,NASDAQ
+"Arcutis Biotherapeutics, Inc.",ARQT,NASDAQ
+Ascendis Pharma A/S,ASND,NASDAQ
+"Arsanis, Inc.",ASNS,NASDAQ
+"Athenex, Inc.",ATNX,NASDAQ
+"AtriCure, Inc.",ATRC,NASDAQ
+"Avenue Therapeutics, Inc.",ATXI,NASDAQ
+Aurinia Pharmaceuticals Inc.,AUPH,NASDAQ
+"AVEO Pharmaceuticals, Inc.",AVEO,NASDAQ
+"Avinger, Inc.",AVGR,NASDAQ
+"Atea Pharmaceuticals, Inc.",AVIR,NASDAQ
+"Avon Products, Inc.",AVP,NYSE
+Anavex Life Sciences Corp.,AVXL,NASDAQ
+"Accelerate Diagnostics, Inc.",AXDX,NASDAQ
+Axovant Sciences Ltd.,AXON,NASDAQ
+"Axsome Therapeutics, Inc.",AXSM,NASDAQ
+AstraZeneca,AZN,NYSE
+"Aziyo Biologics, Inc.",AZYO,NASDAQ
+The Boeing Company,BA,NYSE
+"BioAtla, Inc.",BCAB,NASDAQ
+"BioCardia, Inc.",BCDAW,NASDAQ
+"Atreca, Inc.",BCEL,NASDAQ
+"Biodesix, Inc.",BDSX,NASDAQ
+"Black Diamond Therapeutics, Inc.",BDTX,NASDAQ
+"Becton, Dickinson and Company",BDX,NYSE
+Beam Therapeutics Inc.,BEAM,NASDAQ
+Biogen,BIIB,NASDAQ
+"Biocept, Inc.",BIOC,NASDAQ
+BioNTech SE,BNTX,NASDAQ
+Blueprint Medicines Corporation,BPMC,NASDAQ
+"Bio-Path Holdings, Inc.",BPTH,NASDAQ
+"BioSig Technologies, Inc.",BSGM,NASDAQ
+Boston Scientific Corporation,BSX,NYSE
+BiondVax Pharmaceuticals ltd.,BVXV,NASDAQ
+"Cara Therapeutics, Inc.",CARA,NASDAQ
+"CASI Pharmaceuticals, Inc.",CASI,NASDAQ
+"C4 Therapeutics, Inc.",CCCC,NASDAQ
+Celgene,CELG,NASDAQ
+Celgene Corporation,CELGZ,NASDAQ
+Cerus Corporation,CERS,NASDAQ
+Canopy Growth Corporation,CGC,NYSE
+Check-Cap Ltd.,CHEK,NASDAQ
+"Chiasma, Inc.",CHMA,NASDAQ
+"Coherus Biosciences, Inc.",CHRS,NASDAQ
+"Checkpoint Therapeutics, Inc.",CKPT,NASDAQ
+Cellectis S.A.,CLLS,NASDAQ
+"Cellectar Biosciences, Inc.",CLRB,NASDAQ
+"Clearside Biomedical, Inc.",CLSD,NASDAQ
+"Clovis Oncology, Inc.",CLVS,NASDAQ
+Clementia Pharmaceuticals Inc.,CMTA,NASDAQ
+Conatus Pharmaceuticals Inc.,CNAT,NASDAQ
+CONMED Corporation,CNMD,NASDAQ
+"CNS Pharmaceuticals, Inc.",CNSP,NASDAQ
+"Cocrystal Pharma, Inc.",COCP,NASDAQ
+"Collegium Pharmaceutical, Inc.",COLL,NASDAQ
+"Catalyst Pharmaceuticals, Inc.",CPRX,NASDAQ
+"Curis, Inc.",CRIS,NASDAQ
+CRISPR Therapeutics AG,CRSP,NASDAQ
+"Corvus Pharmaceuticals, Inc.",CRVS,NASDAQ
+"CryoLife, Inc.",CRY,NYSE
+"ContraVir Pharmaceuticals, Inc.",CTRV,NASDAQ
+"Citius Pharmaceuticals, Inc.",CTXR,NASDAQ
+"CohBar, Inc.",CWBR,NASDAQ
+Cyanotech Corporation,CYAN,NASDAQ
+"Cyclacel Pharmaceuticals, Inc.",CYCCP,NASDAQ
+"Dermira, Inc.",DERM,NASDAQ
+"DelMar Pharmaceuticals, Inc.",DMPI,NASDAQ
+Denali Therapeutics Inc.,DNLI,NASDAQ
+"Precision BioSciences, Inc.",DTIL,NASDAQ
+Dynavax Technologies Corporation,DVAX,NASDAQ
+"DexCom, Inc.",DXCM,NASDAQ
+EDAP TMS S.A.,EDAP,NASDAQ
+"Editas Medicine, Inc.",EDIT,NASDAQ
+"Eagle Pharmaceuticals, Inc.",EGRX,NASDAQ
+"Eloxx Pharmaceuticals, Inc.",ELOX,NASDAQ
+Enlivex Therapeutics Ltd.,ENLV,NASDAQ
+Entera Bio Ltd.,ENTX,NASDAQ
+"Evolus, Inc.",EOLS,NASDAQ
+"Epizyme, Inc.",EPZM,NASDAQ
+"Esperion Therapeutics, Inc.",ESPR,NASDAQ
+"89bio, Inc.",ETNB,NASDAQ
+"Evelo Biosciences, Inc.",EVLO,NASDAQ
+Exact Sciences Corporation,EXAS,NASDAQ
+"Eyegate Pharmaceuticals, Inc.",EYEG,NASDAQ
+"EyePoint Pharmaceuticals, Inc.",EYPT,NASDAQ
+Foghorn Therapeutics Inc.,FHTX,NASDAQ
+"Flex Pharma, Inc.",FLKS,NASDAQ
+"Five Prime Therapeutics, Inc.",FPRX,NASDAQ
+Fusion Pharmaceuticals Inc.,FUSN,NASDAQ
+Sanofi,GCVRZ,NASDAQ
+Geron Corporation,GERN,NASDAQ
+"Guardant Health, Inc.",GH,NASDAQ
+"Guardion Health Sciences, Inc.",GHSI,NASDAQ
+Gilead Sciences,GILD,NASDAQ
+Glaukos Corporation,GKOS,NYSE
+Galapagos NV,GLPG,NASDAQ
+"Greenwich LifeSciences, Inc.",GLSI,NASDAQ
+"Genocea Biosciences, Inc.",GNCA,NASDAQ
+"Genprex, Inc.",GNPX,NASDAQ
+"Galera Therapeutics, Inc.",GRTX,NASDAQ
+GlaxoSmithKline,GSK,NYSE
+"G1 Therapeutics, Inc.",GTHX,NASDAQ
+Haemonetics Corporation,HAE,NYSE
+"Restoration Robotics, Inc.",HAIR,NASDAQ
+"Hepion Pharmaceuticals, Inc.",HEPA,NASDAQ
+Huami Corporation,HMI,NYSE
+"Hologic, Inc.",HOLX,NASDAQ
+Histogenics Corporation,HSGX,NASDAQ
+Humana Inc.,HUM,NYSE
+"Idera Pharmaceuticals, Inc.",IDRA,NASDAQ
+"IGM Biosciences, Inc.",IGMS,NASDAQ
+"Illumina, Inc.",ILMN,NASDAQ
+"IMAC Holdings, Inc.",IMACW,NASDAQ
+"ImmunoGen, Inc.",IMGN,NASDAQ
+"Imprimis Pharmaceuticals, Inc.",IMMY,NASDAQ
+"Immunome, Inc.",IMNM,NASDAQ
+Incyte Corporation,INCY,NASDAQ
+"Infinity Pharmaceuticals, Inc.",INFI,NASDAQ
+Ingredion Incorporated,INGR,NYSE
+Insmed Incorporated,INSM,NASDAQ
+"Inspire Medical Systems, Inc.",INSP,NYSE
+"Ionis Pharmaceuticals, Inc.",IONS,NASDAQ
+"Iovance Biotherapeutics, Inc.",IOVA,NASDAQ
+"iRhythm Technologies, Inc.",IRTC,NASDAQ
+"Ironwood Pharmaceuticals, Inc.",IRWD,NASDAQ
+"Intra-Cellular Therapies, Inc.",ITCI,NASDAQ
+"Invuity, Inc.",IVTY,NASDAQ
+"Jounce Therapeutics, Inc.",JNCE,NASDAQ
+"Janssen Research & Development, LLC",JNJ,NYSE
+"Johnson & Johnson Pharmaceutical Research & Development, L.L.C.",JNJ,NYSE
+"Juniper Pharmaceuticals, Inc.",JNP,NASDAQ
+Kellogg Company,K,NYSE
+"Kala Pharmaceuticals, Inc.",KALA,NASDAQ
+Kimberly-Clark Corporation,KMB,NYSE
+"Kiniksa Pharmaceuticals, Ltd.",KNSA,NASDAQ
+The Coca-Cola Company,KO,NYSE
+"Keros Therapeutics, Inc.",KROS,NASDAQ
+"Krystal Biotech, Inc.",KRYS,NASDAQ
+"Kura Oncology, Inc.",KURA,NASDAQ
+"Kymera Therapeutics, Inc.",KYMR,NASDAQ
+Kazia Therapeutics Limited,KZIA,NASDAQ
+"Kezar Life Sciences, Inc.",KZR,NASDAQ
+"Lannett Company, Inc.",LCI,NYSE
+"aTyr Pharma, Inc.",LIFE,NASDAQ
+La Jolla Pharmaceutical Company,LJPC,NASDAQ
+Eli Lilly and Company,LLY,NYSE
+Luminex Corporation,LMNX,NASDAQ
+Lipocine Inc.,LPCN,NASDAQ
+"Leap Therapeutics, Inc.",LPTX,NASDAQ
+"Liquidia Technologies, Inc.",LQDA,NASDAQ
+Lantern Pharma Inc.,LTRN,NASDAQ
+Pulmonx Corporation,LUNG,NASDAQ
+Masimo Corporation,MASI,NASDAQ
+"Moleculin Biotech, Inc.",MBRX,NASDAQ
+"Seres Therapeutics, Inc.",MCRB,NASDAQ
+The Medicines Company,MDCO,NASDAQ
+"Madrigal Pharmaceuticals, Inc.",MDGL,NASDAQ
+"Medifast, Inc.",MED,NYSE
+"MEI Pharma, Inc.",MEIP,NASDAQ
+"miRagen Therapeutics, Inc.",MGEN,NASDAQ
+"MGP Ingredients, Inc.",MGPI,NASDAQ
+"Magenta Therapeutics, Inc.",MGTA,NASDAQ
+"Mirum Pharmaceuticals, Inc.",MIRM,NASDAQ
+"Millendo Therapeutics, Inc.",MLND,NASDAQ
+"Melinta Therapeutics, Inc.",MLNT,NASDAQ
+"Merit Medical Systems, Inc.",MMSI,NASDAQ
+Mannkind Corporation,MNKD,NASDAQ
+"Momenta Pharmaceuticals, Inc.",MNTA,NASDAQ
+MorphoSys AG,MOR,NASDAQ
+Merck Sharp & Dohme LLC,MRK,NYSE
+"Marker Therapeutics, Inc.",MRKR,NASDAQ
+Merus N.V.,MRUS,NASDAQ
+"Metacrine, Inc.",MTCR,NASDAQ
+"Molecular Templates, Inc.",MTEM,NASDAQ
+"MyoKardia, Inc.",MYOK,NASDAQ
+"Nature's Sunshine Products, Inc.",NATR,NASDAQ
+Nektar Therapeutics,NKTR,NASDAQ
+"Nkarta, Inc.",NKTX,NASDAQ
+NewLink Genetics Corporation,NLNK,NASDAQ
+"Novan, Inc.",NOVN,NASDAQ
+"Nurix Therapeutics, Inc.",NRIX,NASDAQ
+"NanoString Technologies, Inc.",NSTG,NASDAQ
+Intec Pharma Ltd.,NTEC,NASDAQ
+"Natera, Inc.",NTRA,NASDAQ
+"Nutrisystem, Inc.",NTRI,NASDAQ
+"NeuroMetrix, Inc.",NURO,NASDAQ
+Neovasc Inc.,NVCN,NASDAQ
+Novo Nordisk A/S,NVO,NYSE
+Novartis Pharmaceuticals,NVS,NYSE
+Novartis,NVS,NYSE
+Invitae Corporation,NVTA,NYSE
+"NextCure, Inc.",NXTC,NASDAQ
+"Obalon Therapeutics, Inc.",OBLN,NASDAQ
+ObsEva SA,OBSV,NASDAQ
+"Ocular Therapeutix, Inc.",OCUL,NASDAQ
+"Odonate Therapeutics, Inc.",ODT,NASDAQ
+"Olema Pharmaceuticals, Inc.",OLMA,NASDAQ
+"OncoMed Pharmaceuticals, Inc.",OMED,NASDAQ
+Omeros Corporation,OMER,NASDAQ
+"Spark Therapeutics, Inc.",ONCE,NASDAQ
+"Oncorus, Inc.",ONCR,NASDAQ
+OncoSec Medical Incorporated,ONCS,NASDAQ
+"IVERIC bio, Inc.",OPHT,NASDAQ
+"OPKO Health, Inc.",OPK,NASDAQ
+Opthea Limited,OPT,NASDAQ
+Bioblast Pharma Ltd.,ORPN,NASDAQ
+"Otonomy, Inc.",OTIC,NASDAQ
+"Outlook Therapeutics, Inc.",OTLK,NASDAQ
+"OvaScience, Inc.",OVAS,NASDAQ
+Ovid Therapeutics Inc.,OVID,NASDAQ
+"Oyster Point Pharma, Inc.",OYST,NASDAQ
+"Passage Bio, Inc.",PASG,NASDAQ
+PAVmed Inc.,PAVM,NASDAQ
+"Puma Biotechnology, Inc.",PBYI,NASDAQ
+"PDL BioPharma, Inc.",PDLI,NASDAQ
+Pfizer,PFE,NYSE
+Wyeth is now a wholly owned subsidiary of Pfizer,PFE,NYSE
+"Progenics Pharmaceuticals, Inc.",PGNX,NASDAQ
+"Progyny, Inc.",PGNY,NASDAQ
+"Phathom Pharmaceuticals, Inc.",PHAT,NASDAQ
+"Pieris Pharmaceuticals, Inc.",PIRS,NASDAQ
+"Pliant Therapeutics, Inc.",PLRX,NASDAQ
+"Pulse Biosciences, Inc.",PLSE,NASDAQ
+Insulet Corporation,PODD,NASDAQ
+"Progenity, Inc.",PROG,NASDAQ
+"Provention Bio, Inc.",PRVB,NASDAQ
+"Poseida Therapeutics, Inc.",PSTX,NASDAQ
+"Protagonist Therapeutics, Inc.",PTGX,NASDAQ
+"Proteostasis Therapeutics, Inc.",PTI,NASDAQ
+PolyPid Ltd.,PYPD,NASDAQ
+Quidel Corporation,QDEL,NASDAQ
+"Ra Pharmaceuticals, Inc.",RARX,NASDAQ
+"Arcus Biosciences, Inc.",RCUS,NYSE
+"Radius Health, Inc.",RDUS,NASDAQ
+Dr. Reddy's Laboratories Limited,RDY,NYSE
+Regeneron Pharmaceuticals,REGN,NASDAQ
+"Rexahn Pharmaceuticals, Inc.",REXN,NASDAQ
+Repligen Corporation,RGEN,NASDAQ
+Regulus Therapeutics Inc.,RGLS,NASDAQ
+REGENXBIO Inc.,RGNX,NASDAQ
+"Relay Therapeutics, Inc.",RLAY,NASDAQ
+"Ritter Pharmaceuticals, Inc.",RTTR,NASDAQ
+"Revolution Medicines, Inc.",RVMD,NASDAQ
+"Revance Therapeutics, Inc.",RVNC,NASDAQ
+"Rhythm Pharmaceuticals, Inc.",RYTM,NASDAQ
+"Cassava Sciences, Inc.",SAVA,NASDAQ
+"Scynexis, Inc.",SCYX,NASDAQ
+"Seelos Therapeutics, Inc.",SEEL,NASDAQ
+"Selecta Biosciences, Inc.",SELB,NASDAQ
+"Sesen Bio, Inc.",SESN,NASDAQ
+"Sigilon Therapeutics, Inc.",SGTX,NASDAQ
+"SI-BONE, Inc.",SIBN,NASDAQ
+"Sientra, Inc.",SIEN,NASDAQ
+Solid Biosciences Inc.,SLDB,NASDAQ
+"Soleno Therapeutics, Inc.",SLNOW,NASDAQ
+"Sanofi Pasteur, a Sanofi Company",SNY,NASDAQ
+"Genzyme, a Sanofi Company",SNY,NASDAQ
+Spherix Incorporated,SPEX,NASDAQ
+"SurModics, Inc.",SRDX,NASDAQ
+"Sorrento Therapeutics, Inc.",SRNE,NASDAQ
+"Sarepta Therapeutics, Inc.",SRPT,NASDAQ
+Staar Surgical Company,STAA,NASDAQ
+"Sutro Biopharma, Inc.",STRO,NASDAQ
+"Satsuma Pharmaceuticals, Inc.",STSA,NASDAQ
+"Shattuck Labs, Inc.",STTK,NASDAQ
+"Supernus Pharmaceuticals, Inc.",SUPN,NASDAQ
+Savara Inc.,SVRA,NASDAQ
+"Shockwave Medical, Inc.",SWAV,NASDAQ
+"SpringWorks Therapeutics, Inc.",SWTX,NASDAQ
+Takeda,TAK,NYSE
+"Tarsus Pharmaceuticals, Inc.",TARS,NASDAQ
+"Translate Bio, Inc.",TBIO,NASDAQ
+"Tricida, Inc.",TCDA,NASDAQ
+"Tactile Systems Technology, Inc.",TCMD,NASDAQ
+"Tenax Therapeutics, Inc.",TENX,NASDAQ
+"TFF Pharmaceuticals, Inc.",TFFP,NASDAQ
+"TG Therapeutics, Inc.",TGTX,NASDAQ
+"Tandem Diabetes Care, Inc.",TNDM,NASDAQ
+Tocagen Inc.,TOCA,NASDAQ
+"Turning Point Therapeutics, Inc.",TPTX,NASDAQ
+Trillium Therapeutics Inc.,TRIL,NASDAQ
+"Taysha Gene Therapies, Inc.",TSHA,NASDAQ
+"Tesaro, Inc.",TSRO,NASDAQ
+"Tetraphase Pharmaceuticals, Inc.",TTPH,NASDAQ
+"Unity Biotechnology, Inc.",UBX,NASDAQ
+UroGen Pharma Ltd.,URGN,NASDAQ
+"Vapotherm, Inc.",VAPO,NYSE
+VBI Vaccines Inc.,VBIV,NASDAQ
+Vericel Corporation,VCEL,NASDAQ
+"Veracyte, Inc.",VCYT,NASDAQ
+Veru Inc.,VERU,NASDAQ
+"Vir Biotechnology, Inc.",VIR,NASDAQ
+"Meridian Bioscience, Inc.",VIVO,NASDAQ
+"Viking Therapeutics, Inc.",VKTX,NASDAQ
+Verrica Pharmaceuticals Inc.,VRCA,NASDAQ
+Verona Pharma plc,VRNA,NASDAQ
+Vertex Pharmaceuticals Incorporated,VRTX,NASDAQ
+"Verastem, Inc.",VSTM,NASDAQ
+"VistaGen Therapeutics, Inc.",VTGN,NASDAQ
+"Vital Therapies, Inc.",VTL,NASDAQ
+Wave Life Sciences Ltd.,WVE,NASDAQ
+"Xenetic Biosciences, Inc.",XBIO,NASDAQ
+"Exicure, Inc.",XCUR,NASDAQ
+Xenon Pharmaceuticals Inc.,XENE,NASDAQ
+"Xencor, Inc.",XNCR,NASDAQ
+"Zafgen, Inc.",ZFGN,NASDAQ
+"Zogenix, Inc.",ZGNX,NASDAQ
+Zosano Pharma Corporation,ZSAN,NASDAQ
+"Zynerba Pharmaceuticals, Inc.",ZYNE,NASDAQ

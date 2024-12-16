@@ -7,7 +7,7 @@ import requests
 BASE_URL = "https://clinicaltrials.gov/api/v2/studies"
 PAGE_SIZE = 1000  # Number of records allowed per page
 MONGO_URI = "mongodb://localhost:27017/"  # Default MongoDB location on local
-db_name = "clinical_trials"
+db_name = "clinical_trials_db"
 collection_name = "studies"
 
 
