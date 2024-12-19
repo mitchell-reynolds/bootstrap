@@ -65,7 +65,7 @@ def filter_fda(threshold):
         "sponsor_name": 1,
         "products": 1,
         "openfda.generic_name": 1,
-        "submissions": {"$elemMatch": {"submission_number": "1"}}
+        "submissions": {"$elemMatch": {"submission_type": "ORIG"}}
     }
 
     query = {"sponsor_name": {"$in" : fda_company_list}}

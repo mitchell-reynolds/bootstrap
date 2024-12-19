@@ -17,7 +17,8 @@ echo "Extracted & loaded up clinical trials, FDA approvals, and relevant stocks"
 
 python data_cleaning/filter_clinical_trials.py
 python data_cleaning/filter_fda.py
-python data_cleaning/successfull_drugs.py
+python data_cleaning/combine_fda_and_ct.py
+python data_cleaning/filter_drugs.py
 
 echo "Filtered clinical trials & FDA approvals to only keep successful drugs"
 

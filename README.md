@@ -1,5 +1,8 @@
 # Bootstrap Bio - Take Home Analysis
 
+Key Question: If we knew the results of some percentage of clinical trials, what sort of ROI should we expect? How much does each stock move for each announcement? 
+Get BioPharmCatalyst and add it to the invoice
+
 [See Google Doc here](https://docs.google.com/document/d/1gTC7-phKevo7qJZr3LecRARh2zT2D-3F2IWBKjhZJOQ/edit?tab=t.0)
 
 # QUICKSTART (CLI)

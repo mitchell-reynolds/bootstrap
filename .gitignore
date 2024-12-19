@@ -3,3 +3,5 @@ data_cleaning/processed_data/*
 !data_cleaning/processed_data/stock_lkup.csv
 .ipynb_checkpoints/
 .env
+viz/**/*.ipynb
+viz/**/.DS_Store

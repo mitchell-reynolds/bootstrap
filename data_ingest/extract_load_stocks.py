@@ -18,8 +18,9 @@ def main():
         if not data.empty:
             temp = data[["Close"]].reset_index()
             temp["company_ct"] = company_ct
-            temp.columns = ["date_stock", "closing_price", "company_ct"]
-            result_dfs.append(temp[["date_stock", "company_ct", "closing_price"]])
+            temp["ticker"] = ticker
+            temp.columns = ["date_stock", "closing_price", "company_ct", "ticker"]
+            result_dfs.append(temp[["date_stock", "company_ct", "ticker", "closing_price"]])
 
     final_df = pd.concat(result_dfs, ignore_index=True)
     final_df.to_csv("./data_ingest/raw_data/merged_stock_data.csv", index=False)
