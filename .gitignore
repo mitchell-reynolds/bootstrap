@@ -4,4 +4,4 @@ data_cleaning/processed_data/*
 .ipynb_checkpoints/
 .env
 viz/**/*.ipynb
-viz/**/.DS_Store
+viz/figures/.DS_Store
