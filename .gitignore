@@ -5,3 +5,4 @@ data_cleaning/processed_data/*
 .env
 viz/**/*.ipynb
 viz/figures/.DS_Store
+viz/figures/line_graphs/

@@ -22,7 +22,7 @@ python data_cleaning/filter_drugs.py
 
 echo "Filtered clinical trials & FDA approvals to only keep successful drugs"
 
-python viz/plot_stock_time_series.py
+python viz/make_graphs.py
 
 echo "Check the './viz/figures/' folder for all graphs"
 

@@ -2,10 +2,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.graph_objects as go
+import plotly.express as px
 from plotly.subplots import make_subplots
 import datetime
 import argparse
 import os
+import numpy as np
 
 def load_data(stock_path, drugs_path):
     """Load and preprocess stock and drug data"""
@@ -22,7 +24,7 @@ def load_data(stock_path, drugs_path):
 def filter_drugs(drugs_df, limit_to_companies_with_X_or_fewer_drugs=1000):
     """Filter and sample drugs data"""
     filtered = drugs_df.dropna(subset=['fda_company', 'fda_date', 'ct_date', 'ct_phase', 'matched_drug_names'])
-    filtered = filtered.sort_values(by=['ct_date']).drop_duplicates(subset=['fda_id'], keep='last')
+    filtered = filtered.sort_values(by=['fda_company', 'fda_id', 'ct_date']).drop_duplicates(subset=['fda_id'], keep='last')
     filtered = filtered[filtered['fda_company'].isin(
         filtered['fda_company'].value_counts()[filtered['fda_company'].value_counts() <= limit_to_companies_with_X_or_fewer_drugs].index
     )]
@@ -120,11 +122,11 @@ def create_seaborn_plot(company_stocks, row):
     plt.tight_layout()
     
     # Create figures directory if it doesn't exist
-    os.makedirs('./viz/figures', exist_ok=True)
+    os.makedirs('./viz/figures/line_graphs/', exist_ok=True)
     
     # Create filename using relevant information
     clean_drug_name = row["matched_drug_names"].replace('/', '_').replace(' ', '_').replace(',', '')
-    filename = f'./viz/figures/{row["fda_company"]}_{ticker}_{clean_drug_name}_{row["ct_id"]}.png'
+    filename = f'./viz/figures/line_graphs/{row["fda_company"]}_{ticker}_{clean_drug_name}_{row["ct_id"]}.png'
     
     # Save figure
     plt.savefig(filename, dpi=300, bbox_inches='tight')
@@ -138,13 +140,16 @@ def main():
     drugs_path = './data_cleaning/processed_data/filtered_drugs.csv'
     parser.add_argument('--plots', choices=['plotly', 'seaborn', 'both'], default='seaborn',
                         help='Type of plot to generate')
-    parser.add_argument('--limit', type=int, default=10,
+    parser.add_argument('--limit', type=int, default=1000,
                         help='Limit to companies with X or fewer drugs')
     args = parser.parse_args()
     
     # Load and process data
     stocks, drugs = load_data(stock_path, drugs_path)
     filtered_drugs = filter_drugs(drugs, args.limit)
+
+    # New code for histogram
+    processed_data = []
     
     # Iterate over each drug entry
     for _, row in filtered_drugs.iterrows():
@@ -167,6 +172,89 @@ def main():
             
         if args.plots in ['seaborn', 'both']:
             filename = create_seaborn_plot(company_stocks, row)
+
+        # Get 7 day windows after each date
+        ct_window = pd.date_range(row['ct_date'], row['ct_date'] + pd.Timedelta(days=7))
+        fda_window = pd.date_range(row['fda_date'], row['fda_date'] + pd.Timedelta(days=7))
+
+        # Get price data for windows
+        ct_prices = stocks[
+            (stocks['company_ct'] == row['fda_company']) & 
+            (stocks['date_stock'].isin(ct_window))
+        ]['closing_price']
+        
+        fda_prices = stocks[
+            (stocks['company_ct'] == row['fda_company']) & 
+            (stocks['date_stock'].isin(fda_window))
+        ]['closing_price']
+        
+        # Create row dictionary with all original data
+        row_dict = row.to_dict()
+        row_dict.update({
+            'ct_avg_price': ct_prices.mean() if not ct_prices.empty else np.nan,
+            'fda_avg_price': fda_prices.mean() if not fda_prices.empty else np.nan
+        })
+        processed_data.append(row_dict)
+
+    # Create processed dataframe
+    processed_df = pd.DataFrame(processed_data)
+    
+    # Calculate percentage change and remove NA rows
+    processed_df['price_pct_change'] = ((processed_df['fda_avg_price'] - processed_df['ct_avg_price']) / 
+                                       processed_df['ct_avg_price'] * 100)
+    processed_df['profit_or_loss'] = processed_df['fda_avg_price'] - processed_df['ct_avg_price']
+    clean_df = processed_df.dropna(subset=['price_pct_change'])
+    ROI = round(clean_df['profit_or_loss'].sum() / clean_df['ct_avg_price'].sum(), 2)
+    min_date = clean_df['ct_date'].min().strftime('%Y-%m-%d')
+    max_date = clean_df['fda_date'].max().strftime('%Y-%m-%d')
+    print("From", min_date, "to", max_date)
+    print("If buying 1 share in each opportunity, your overall profit/loss would be", round(clean_df['profit_or_loss'].sum(), 2), "with an ROI of", ROI)
+    
+    # Create and show histogram
+    if not clean_df.empty:
+
+        # Plotly histogram
+        hist_fig = px.histogram(
+            clean_df,
+            x='price_pct_change',
+            nbins=20,
+            title='Distribution of Stock Price Changes<br>CT Date to FDA Date'
+        )
+        hist_fig.update_layout(
+            title={
+                'y': 0.9,
+                'xanchor': 'center',
+                'x': 0.5
+            },
+            xaxis_title='Percentage Change (%)',
+            yaxis_title='Count',
+            template='plotly_dark'
+        )
+        hist_fig.show()
+
+        # Seaborn histogram
+        plt.figure(figsize=(12, 6))
+        sns.histplot(data=clean_df, x='price_pct_change', bins=20)
+        plt.title('Distribution of Stock Price Changes\nCT Date to FDA Date')
+        plt.xlabel('Percentage Change (%)')
+        plt.ylabel('Count')
+        plt.grid(True, linestyle='--', color='grey')
+        
+        # Format x-axis ticks to show percentages
+        ax = plt.gca()
+        ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{x:.1f}%'))
+        
+        plt.tight_layout()
+        
+        # Save seaborn histogram
+        os.makedirs('./viz/figures/', exist_ok=True)
+        plt.savefig('./viz/figures/histogram.png', 
+                    dpi=300, bbox_inches='tight')
+        plt.close()
+    
+    # Save processed dataframe
+    os.makedirs('./data_cleaning/processed_data/', exist_ok=True)
+    clean_df.to_csv('./data_cleaning/processed_data/price_changes.csv', index=False)
 
 if __name__ == "__main__":
     main()

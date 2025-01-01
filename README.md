@@ -8,8 +8,8 @@ Get BioPharmCatalyst and add it to the invoice
 # QUICKSTART (CLI)
 With [Anaconda](https://docs.anaconda.com/anaconda/install/)
 and [MongoDB](https://www.mongodb.com/docs/manual/installation/)
-installed on your local, run this commands to get up and running in ~10min 
-as you'll download the entire clinicaltrials.gov database.
+installed, run this commands to get up and running in ~10min 
+as you'll download the entire clinicaltrials.gov database and FDA approval file.
 
 _Note, I have a Macbook with the M2 chip so your environment might not translate._
 _The better path would be to have this spun up in a server but that's a later problem_ 😉
@@ -60,30 +60,31 @@ results.submissions.submission_status,
 results.submissions.submission_class_code
 ```
 
-# Project Structure
-```
+# Project Structure```
 project_root/
 ├─ data_ingest/
-│  ├─ download_clinical_trials.py
-│  ├─ fetch_fda_approvals.py
-│  ├─ fetch_stock_data.py
+│  ├─ extract_load_clinical_trials.py
+│  ├─ extract_load_fda_approvals.py
+│  ├─ extract_load_stocks.py
 │  └─ raw_data/
 │
 ├─ data_cleaning/
-│  ├─ clean_clinical_trials.py
-│  ├─ merge_with_fda_data.py
-│  ├─ integrate_stock_prices.py
+│  ├─ combine_fda_and_ct.py
+│  ├─ filter_clinical_trials.py
+│  ├─ filter_fda_approvals.py
+│  ├─ filter_stocks.py
+│  ├─ integrate_stocks_and_drugs.py
 │  └─ processed_data/
+│
+├─ viz/
+│  ├─ plot_stock_time_series.py
+│  └─ figures/ (PNG, HTML)
 │
 ├─ models/
 │  ├─ feature_engineering.py
 │  ├─ train_model.py
 │  ├─ evaluate_model.py
 │  └─ saved_models/
-│
-├─ visualization/
-│  ├─ plot_stock_time_series.py
-│  └─ figures/ (PNG, HTML)
 │
 ├─ utils/
 │  ├─ config.py
