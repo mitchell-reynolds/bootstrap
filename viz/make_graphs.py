@@ -90,6 +90,11 @@ def create_plotly_figure(company_stocks, row):
 
 def create_seaborn_plot(company_stocks, row):
     """Create a Seaborn plot for a single drug and save to file"""
+
+    # Check to see if there is any data
+    if company_stocks.empty:
+        return None
+
     plt.figure(figsize=(12, 6))
     sns.lineplot(data=company_stocks, x='date_stock', y='closing_price')
     
@@ -213,28 +218,30 @@ def main():
     # Create and show histogram
     if not clean_df.empty:
 
+        bins = np.arange(-50, 275, 25)
+
         # Plotly histogram
-        hist_fig = px.histogram(
-            clean_df,
-            x='price_pct_change',
-            nbins=20,
-            title='Distribution of Stock Price Changes<br>CT Date to FDA Date'
-        )
-        hist_fig.update_layout(
-            title={
-                'y': 0.9,
-                'xanchor': 'center',
-                'x': 0.5
-            },
-            xaxis_title='Percentage Change (%)',
-            yaxis_title='Count',
-            template='plotly_dark'
-        )
-        hist_fig.show()
+        # hist_fig = px.histogram(
+        #     clean_df,
+        #     x='price_pct_change',
+        #     nbins=bins,
+        #     title='Distribution of Stock Price Changes<br>CT Date to FDA Date'
+        # )
+        # hist_fig.update_layout(
+        #     title={
+        #         'y': 0.9,
+        #         'xanchor': 'center',
+        #         'x': 0.5
+        #     },
+        #     xaxis_title='Percentage Change (%)',
+        #     yaxis_title='Count',
+        #     template='plotly_dark'
+        # )
+        # hist_fig.show()
 
         # Seaborn histogram
         plt.figure(figsize=(12, 6))
-        sns.histplot(data=clean_df, x='price_pct_change', bins=20)
+        sns.histplot(data=clean_df, x='price_pct_change', bins=bins)
         plt.title('Distribution of Stock Price Changes\nCT Date to FDA Date')
         plt.xlabel('Percentage Change (%)')
         plt.ylabel('Count')
