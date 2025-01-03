@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-'''
 # Build env and MongoDB
 conda create --name bootstrap
 conda activate bootstrap --file=environments.yml
@@ -9,7 +8,6 @@ brew install mongodb-community
 brew services start mongodb-community
 
 echo "Conda env & MongoDB instance created successfully"
-'''
 
 python data_ingest/extract_load_clinical_trials.py
 python data_ingest/extract_load_fda_approvals.py

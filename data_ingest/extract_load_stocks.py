@@ -118,7 +118,7 @@ def process_companies(companies: List[str]) -> Dict[str, Optional[str]]:
 
 def expand_stocks():
     unique_sponsors = pd.read_csv("./data_cleaning/processed_data/sponsor_data.csv")
-    unique_sponsors = unique_sponsors[unique_sponsors["sponsor_num_trials"] >= 30]
+    unique_sponsors = unique_sponsors[unique_sponsors["sponsor_num_trials"] >= 25]
     unique_sponsors = unique_sponsors["company_ct"].unique().tolist()
 
     results = process_companies(unique_sponsors)
@@ -194,7 +194,7 @@ def main():
             result_dfs.append(temp[["date_stock", "company_ct", "ticker", "closing_price"]])
 
     final_df = pd.concat(result_dfs, ignore_index=True)
-    final_df.to_csv("./data_ingest/raw_data/merged_stock_data_updated.csv", index=False)
+    final_df.to_csv("./data_ingest/raw_data/merged_stock_data.csv", index=False)
 
 if __name__ == "__main__":
     main()
