@@ -5,6 +5,11 @@ from typing import List, Dict, Optional
 import requests
 import os
 from dotenv import load_dotenv
+from ratelimit import limits, sleep_and_retry
+import time 
+
+@sleep_and_retry
+@limits(calls=75, period=60)
 
 def search_ticker_symbol(company_name: str) -> Optional[str]:
     """
@@ -26,8 +31,6 @@ def search_ticker_symbol(company_name: str) -> Optional[str]:
     try:
         response = requests.get(base_url, params=params)
         data = response.json()
-
-        print(data)
 
         if "bestMatches" in data and len(data["bestMatches"]) > 0:
             return data["bestMatches"][0]["1. symbol"]
@@ -90,11 +93,6 @@ def get_ticker(company_name: str) -> Optional[str]:
         if 'symbol' in info:
             return info['symbol']
 
-        # If exact match fails, try search
-        search = yf.Ticker(company_name.split()[0])  # Use first word of company name
-        if 'symbol' in search.info:
-            return search.info['symbol']
-
         # If yfinance fails, try Alpha Vantage API
         alpha_vantage_result = search_ticker_symbol(company_name)
         if alpha_vantage_result:
@@ -108,6 +106,8 @@ def get_ticker(company_name: str) -> Optional[str]:
 def process_companies(companies: List[str]) -> Dict[str, Optional[str]]:
     company_ticker_map = {}
     for company in companies:
+        # Add wait time to avoid rate limiting
+        time.sleep(.75)
         ticker = get_ticker(company)
         company_ticker_map[company] = ticker
         if ticker:
@@ -118,7 +118,7 @@ def process_companies(companies: List[str]) -> Dict[str, Optional[str]]:
 
 def expand_stocks():
     unique_sponsors = pd.read_csv("./data_cleaning/processed_data/sponsor_data.csv")
-    unique_sponsors = unique_sponsors[unique_sponsors["sponsor_num_trials"] >= 25]
+    # unique_sponsors = unique_sponsors[unique_sponsors["sponsor_num_trials"] >= 500]
     unique_sponsors = unique_sponsors["company_ct"].unique().tolist()
 
     results = process_companies(unique_sponsors)
@@ -148,7 +148,6 @@ def expand_stocks():
     "Supernus Pharmaceuticals, Inc.": "SUPN",
     "Eyenovia Inc.": "EYEN",
     "Johnson & Johnson Vision Care, Inc.": "JNJ",
-    "ViiV Healthcare": None,
     "Takeda": "TAK",
     "Pfizer": "PFE",
     "Santen Inc.": "SNPHY",
@@ -158,11 +157,11 @@ def expand_stocks():
     "AstraZeneca": "AZN",
     }
 
-    # Merge the dictionaries, with the df_dict taking precedence and removing dupes (case sensitive)
+    # Merge the dictionaries, second position takes precedence (ie df_dict)
     df_lookup = pd.read_csv("./data_cleaning/processed_data/stock_lkup.csv")
     df_dict = dict(zip(df_lookup['company_ct'], df_lookup['stock_ticker']))
-    MANUAL_MAPPING = {**MANUAL_MAPPING, **df_dict}
-    results = {**MANUAL_MAPPING, **results}
+    df_dict = {**MANUAL_MAPPING, **df_dict}
+    results = {**results, **df_dict}
     results = dict(results)
 
     # Drop companies with no ticker
@@ -176,6 +175,9 @@ def expand_stocks():
 def main():
     
     df_lookup = expand_stocks().reset_index()
+    df_lookup.to_csv("./data_ingest/raw_data/expanded_stock_lkup.csv", index=False)
+
+    # df_lookup = pd.read_csv("./data_ingest/raw_data/expanded_stock_lkup.csv")
     
     # Define time range
     end_date = datetime.today()

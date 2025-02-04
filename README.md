@@ -1,7 +1,8 @@
 # Bootstrap Bio - Take Home Analysis
 
-Key Question: If we knew the results of some percentage of clinical trials, what sort of ROI should we expect? How much does each stock move for each announcement? 
-Get BioPharmCatalyst and add it to the invoice
+Get more failures
+https://www.biospace.com/drug-development/5-clinical-assets-that-flopped-in-2024
+
 
 [See Google Doc here](https://docs.google.com/document/d/1gTC7-phKevo7qJZr3LecRARh2zT2D-3F2IWBKjhZJOQ/edit?tab=t.0)
 
@@ -31,6 +32,11 @@ chmod +x setup_structure.sh
    - eg In the FDA, BIZENGRI is the brand name for the active ingredient "ZENOCUTUZUMAB-ZBCO" but Clinical Trials has "Zenocutuzumab" and "MCLA-128"
    - The sponsor matches (FDA `MERUS N.V.`; CT `Merus N.V.`)
 - Maybe use [Regulations.gov API](https://open.gsa.gov/api/regulationsgov/) to pull data on comments made about companies?
+- [JnJ Acquisition](https://www.jnj.com/media-center/press-releases/janssen-acquires-rights-to-novel-gene-therapy-pioneering-treatment-solutions-for-late-stage-age-related-macular-degeneration)
+
+# Surprising Stats
+- [Overall, 90% of clinical drug trails fail between Phase 1 onward](https://www.sciencedirect.com/science/article/pii/S2211383522000521) but [about 40% succeed when at Phase 3](https://www.nature.com/articles/nrd.2016.136).
+- TODO
 
 # Data Dictionary
 
